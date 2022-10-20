@@ -17,25 +17,25 @@ public class GeoFenceController {
     @Autowired
     GeoFenceService geoFenceService;
 
-    @PostMapping("/createGeo")
+    @PostMapping("/Geo")
     public ResponseDto addGeoFence(@Valid @RequestBody GeoFenceEntity request) {
         log.info("creating geofence for request {}", request);
         return geoFenceService.createGeofence(request);
     }
 
-    @GetMapping("/getGeos")
+    @GetMapping("/Geos")
     public ResponseDto getGeoFences() {
         log.info("finding geofence list ");
         return geoFenceService.getGeoFences();
     }
 
-    @DeleteMapping("/deleteGeo"+"/{geoId}")
+    @DeleteMapping("/Geo"+"/{geoId}")
     public ResponseDto deleteGeoFence(@PathVariable final Long geoId) {
         log.info("deleting geofence for {} ", geoId);
         return geoFenceService.deleteGeoFence(geoId);
     }
 
-    @PutMapping("/updateGeo")
+    @PutMapping("/Geo")
     public ResponseDto updateGeoFence(@Valid @RequestBody GeoFenceEntity request) {
         log.info("updating geofence for {}", request);
         return geoFenceService.updateGeoFence(request);
